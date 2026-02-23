@@ -22,7 +22,7 @@ public class Main {
 
             // Handle user choice using a switch statement
             switch(choice){
-                case 1:
+                case 1 -> {
                     // Prompt user for student details and add the student to the service
                     System.out.print("Enter ID: ");
                     int id = scanner.nextInt();
@@ -35,14 +35,12 @@ public class Main {
                     System.out.print("Enter Course: ");
                     String course = scanner.nextLine();
                     service.addStudent(new Student(id, name, age, course));
-                    break;
+                }
 
-                case 2:
-                    // View all students by calling the viewAll method of the service
+                case 2 -> // View all students by calling the viewAll method of the service
                     service.viewAll();
-                    break;
 
-                case 3:
+                case 3 -> {
                     // Prompt user for ID and search for the student using the searchById method of the service
                     System.out.print("Enter ID to search: ");
                     int searchId = scanner.nextInt();
@@ -54,23 +52,23 @@ public class Main {
                     }else{
                         System.out.println("Student not found");
                     }
-                    break;
+                }
 
-                case 4:
+                case 4 -> {
                     // Prompt user for ID and delete the student using the deleteStudent method of the service
                     System.out.print("Enter ID to delete: ");
                     int deleteId = scanner.nextInt();
                     service.deleteStudent(deleteId);
-                    break;
+                }
 
-                case 5:
+                case 5 -> {
                     // Exit the program by printing a goodbye message, closing the scanner, and returning from the main method
                     System.out.println("Goodbye!");
                     scanner.close();
                     return;
+                }
 
-                default:
-                    System.out.println("Invalid choice");
+                default -> System.out.println("Invalid choice");
             }
         }   
     }

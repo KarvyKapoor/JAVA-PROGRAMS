@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReverseArray",
+            "request": "launch",
+            "mainClass": "DSA.ReverseArray",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "LinearSearch",
+            "request": "launch",
+            "mainClass": "DSA.LinearSearch",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "MaxInArray",
+            "request": "launch",
+            "mainClass": "DSA.MaxInArray",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "StudentmanagementSystem.Main",

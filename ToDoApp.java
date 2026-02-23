@@ -25,7 +25,7 @@ public class ToDoApp {
 
             // Implementing switch case for menu options
             switch(choice) {
-                case 1:
+                case 1 -> {
                     // Check if the task list is empty and display tasks
                     if(task.isEmpty()){
                         System.out.println("No Task yet");
@@ -35,17 +35,17 @@ public class ToDoApp {
                             System.out.println((i+1) + ". " + task.get(i));
                         }
                     }
-                    break;
+                }
 
-                case 2:
+                case 2 -> {
                     // Taking user input for new task and adding it to the list
                     System.out.print("Enter the task: ");
                     String newTask = scanner.nextLine();
                     task.add(newTask);
                     System.out.println("Task added");
-                    break;
+                }
 
-                case 3:
+                case 3 -> {
                     // Check if the task list is empty and take user input for task number to delete
                     if(task.isEmpty()){
                         System.out.println("No Task to delete");
@@ -61,16 +61,16 @@ public class ToDoApp {
                             System.out.println("Invalid task number");
                         }
                     }
-                    break;
+                }
 
-                case 4:
+                case 4 -> {
                     // Exit the program
                     System.out.println("GoodBye!");
                     scanner.close();
                     return;
+                }
                     
-                default:
-                    // For invalid menu choice
+                default -> // For invalid menu choice
                     System.out.println("Invalid Choice");
             }
         }

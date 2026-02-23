@@ -1,13 +1,15 @@
-package BASICS;
+
 import java.util.Scanner;
 
 public class ArmstrongNumber {
     public static void main(String args[]){
         int arg , sum=0 ,r;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter an number :");
-        int n = scanner.nextInt();
-        arg = n;
+        int n;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter an number :");
+            n = scanner.nextInt();
+            arg = n;
+        }
         for(int i =1;i<n;i++){
             while(n>0){
                 r =n%10;
