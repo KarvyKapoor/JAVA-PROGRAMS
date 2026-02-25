@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "validParentheses",
+            "request": "launch",
+            "mainClass": "DSA.validParentheses",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "targethash",
+            "request": "launch",
+            "mainClass": "DSA.targethash",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "BankAccountInterface",
             "request": "launch",
             "mainClass": "BankAccountInterface",
