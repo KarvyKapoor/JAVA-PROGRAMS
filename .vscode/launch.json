@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BasicInOne",
+            "request": "launch",
+            "mainClass": "FileHandling.BasicInOne",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "Duplicate",
             "request": "launch",
             "mainClass": "DSA.Duplicate",
