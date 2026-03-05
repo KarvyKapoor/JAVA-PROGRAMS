@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MaximumSubarray",
+            "request": "launch",
+            "mainClass": "DSA.MaximumSubarray",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "BuySell",
+            "request": "launch",
+            "mainClass": "DSA.BuySell",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "validParentheses",
             "request": "launch",
             "mainClass": "DSA.validParentheses",

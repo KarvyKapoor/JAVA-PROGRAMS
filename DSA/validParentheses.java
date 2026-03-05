@@ -4,14 +4,15 @@ import java.util.*;
 
 public class validParentheses {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the string of parentheses :");
-        String s = sc.nextLine();
-        if (isValid(s)) {
-            System.out.println("The parentheses are valid.");
-    } else {
-        System.out.println("The parentheses are not valid.");
-    }
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter the string of parentheses :");
+            String s = sc.nextLine();
+            if (isValid(s)) {
+                System.out.println("The parentheses are valid.");
+   } else {
+            System.out.println("The parentheses are not valid.");
+   }
+        }
 }
 
     public static boolean isValid(String s) {
