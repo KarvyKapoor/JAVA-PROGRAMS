@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "movezeroes",
+            "request": "launch",
+            "mainClass": "DSA.movezeroes",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "BinarySearch",
+            "request": "launch",
+            "mainClass": "DSA.BinarySearch",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "BasicInOne",
             "request": "launch",
             "mainClass": "FileHandling.BasicInOne",
