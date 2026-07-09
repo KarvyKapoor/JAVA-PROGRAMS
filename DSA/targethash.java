@@ -19,7 +19,7 @@ public class targethash {
                 System.out.println("Enter the size of array :");
                 int n = sc.nextInt();
                 int a[]=new int[n];
-                System.out.println("Enter the elements of array :");
+                System.out.println("Enter the elements of array :"); 
                 for(int i=0;i<n;i++){
                     a[i]=sc.nextInt();
                 }

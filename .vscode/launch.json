@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SumOfDigits",
+            "request": "launch",
+            "mainClass": "SumOfDigits",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "StreamExample",
+            "request": "launch",
+            "mainClass": "StreamExample",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
+            "name": "ValidAnagram",
+            "request": "launch",
+            "mainClass": "DSA.ValidAnagram",
+            "projectName": "JAVA_f93f5b2c"
+        },
+        {
+            "type": "java",
             "name": "movezeroes",
             "request": "launch",
             "mainClass": "DSA.movezeroes",
