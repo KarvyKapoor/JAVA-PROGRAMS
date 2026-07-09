@@ -22,16 +22,20 @@ Generics allow classes, interfaces, and methods to work with different data type
 - double
 - char
 - boolean
+  
 ✔ Stores actual values
 ❌ Cannot be used with Generics
+
 ### Reference Types
 - String
 - Integer
 - ArrayList
 - Scanner
 - Custom Objects
+  
 ✔ Stores object references
 ✔ Can be used with Generics
+
 ---
 ## 📌 Wrapper Classes
 | Primitive | Wrapper |
@@ -44,7 +48,9 @@ Generics allow classes, interfaces, and methods to work with different data type
 | double | Double |
 | char | Character |
 | boolean | Boolean |
+
 💡 Generics require Wrapper Classes because they work only with objects.
+
 ---
 ## 📌 Generic Type vs Raw Type
 ### ✅ Generic Type
@@ -58,9 +64,11 @@ ArrayList<String> list = new ArrayList<>();
 ```java
 ArrayList list = new ArrayList();
 ```
+
 ❌ No type safety
 ❌ Runtime errors
 ❌ Explicit casting required
+
 ---
 ## 📌 Compiler vs JVM
 ### 🛠 Compiler
@@ -84,7 +92,9 @@ ArrayList<String>
 ```java
 ArrayList
 ```
+
 💡 Reason: Backward Compatibility
+
 ---
 ## 📌 Object vs Generics
 ### Using Object
@@ -100,7 +110,9 @@ String s = (String) list.get(1);
 ArrayList<String> list = new ArrayList<>();
 ```
 ❌ Compile Time Error
+
 💡 Generics move errors from **Runtime → Compile Time**
+
 ---
 ## 🎤 Interview Questions
 - What are Generics?
@@ -112,10 +124,12 @@ ArrayList<String> list = new ArrayList<>();
 - Compiler vs JVM responsibilities?
 ---
 ## 🚀 Best Practices
-✅ Prefer Generic Types
-✅ Avoid Raw Types
-✅ Use Wrapper Classes
-✅ Catch errors at Compile Time
+
+- Prefer Generic Types
+- Avoid Raw Types
+- Use Wrapper Classes
+- Catch errors at Compile Time
+
 ---
 ## 📚 Files
 - PrimitiveVsReference.java
