@@ -45,6 +45,6 @@ This section contains Java Generic programming concepts implemented through simp
 - Generic Methods
 - Multiple Type Parameters
 - Bounded Generics
-- [ ] Wildcards
-- [ ] PECS (Producer Extends Consumer Super)
-- [ ] Generic Interfaces
+- Wildcards
+- PECS (Producer Extends Consumer Super)
+- Generic Interfaces
