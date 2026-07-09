@@ -1,6 +1,8 @@
 # **JAVA GENERICS**
 ## 🎯 Purpose
+
 This section contains Java Generic programming concepts implemented through simple examples. The goal is to understand how Generics improve type safety, code reusability, and compile time error checking while preparing for technical interviews.
+
 ---
 ## 📌 Topics Covered
 - Primitive vs Reference Types
