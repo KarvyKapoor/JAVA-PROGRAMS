@@ -1,50 +1,126 @@
-# **JAVA GENERICS**
-## 🎯 Purpose
+# ☕ Java Generics
+## 🎯 Definition
 
-This section contains Java Generic programming concepts implemented through simple examples. The goal is to understand how Generics improve type safety, code reusability, and compile time error checking while preparing for technical interviews.
+Generics allow classes, interfaces, and methods to work with different data types while providing compile time type safety.
 
 ---
-## 📌 Topics Covered
-- Primitive vs Reference Types
-- Wrapper Classes
-- Generic Types vs Raw Types
-- Compiler vs JVM Responsibilities
+## ⭐ Key Points
+- Introduced in Java 5
+- Compile time type checking
+- Eliminates explicit casting
+- Improves code reusability
+- Prevents `ClassCastException`
+- Works only with Reference Types
+---
+## 📌 Primitive vs Reference Types
+### Primitive Types
+- byte
+- short
+- int
+- long
+- float
+- double
+- char
+- boolean
+✔ Stores actual values
+❌ Cannot be used with Generics
+### Reference Types
+- String
+- Integer
+- ArrayList
+- Scanner
+- Custom Objects
+✔ Stores object references
+✔ Can be used with Generics
+---
+## 📌 Wrapper Classes
+| Primitive | Wrapper |
+|-----------|----------|
+| byte | Byte |
+| short | Short |
+| int | Integer |
+| long | Long |
+| float | Float |
+| double | Double |
+| char | Character |
+| boolean | Boolean |
+💡 Generics require Wrapper Classes because they work only with objects.
+---
+## 📌 Generic Type vs Raw Type
+### ✅ Generic Type
+```java
+ArrayList<String> list = new ArrayList<>();
+```
+✔ Compile time checking
+✔ Type safe
+✔ No explicit casting
+### ❌ Raw Type
+```java
+ArrayList list = new ArrayList();
+```
+❌ No type safety
+❌ Runtime errors
+❌ Explicit casting required
+---
+## 📌 Compiler vs JVM
+### 🛠 Compiler
+- Type Checking
+- Type Inference
 - Type Erasure
-- Why `Object` is not a replacement for Generics
+- Inserts Type Casts
+### ⚙ JVM
+- Executes Bytecode
+- Class Loading
+- Memory Management
+- Garbage Collection
 ---
-## 🚀 Code Files
-| File | Description |
-|------|-------------|
-| PrimitiveVsReference.java | Difference between primitive and reference types |
-| WrapperClasses.java | Wrapper classes and Autoboxing |
-| GenericClassVsRawType.java | Generic types compared with raw types |
-| CompilerVsJVM.java | Responsibilities of Compiler and JVM |
-| TypeErasure.java | Understanding Type Erasure |
-| ObjectVsGenerics.java | Why `Object` cannot replace Generics |
+## 📌 Type Erasure
+### Definition
+Removes Generic type information during compilation.
+```java
+ArrayList<String>
+```
+↓
+```java
+ArrayList
+```
+💡 Reason: Backward Compatibility
 ---
-## 💡 Interview Questions
+## 📌 Object vs Generics
+### Using Object
+```java
+ArrayList<Object> list = new ArrayList<>();
+```
+❌ Runtime Error
+```java
+String s = (String) list.get(1);
+```
+### Using Generics
+```java
+ArrayList<String> list = new ArrayList<>();
+```
+❌ Compile Time Error
+💡 Generics move errors from **Runtime → Compile Time**
+---
+## 🎤 Interview Questions
 - What are Generics?
-- Why were Generics introduced in Java?
-- Why can't Generics use primitive data types?
-- What are Wrapper Classes?
+- Why were Generics introduced?
+- Why can't Generics use primitive types?
 - What is Type Erasure?
-- Explain Generic Type vs Raw Type.
+- Raw Type vs Generic Type?
 - Why is `Object` not a replacement for Generics?
-- Who handles Generics, the Compiler or the JVM?
+- Compiler vs JVM responsibilities?
 ---
-## 📝 Best Practices
-- Always prefer Generic Types over Raw Types.
-- Avoid using `Object` when Generics can provide type safety.
-- Use meaningful type parameter names where appropriate.
-- Prefer compile time error detection over runtime exceptions.
-- Follow Java naming conventions while creating Generic classes.
+## 🚀 Best Practices
+✅ Prefer Generic Types
+✅ Avoid Raw Types
+✅ Use Wrapper Classes
+✅ Catch errors at Compile Time
 ---
-## 📈 Progress
-### Upcoming
-- Generic Classes
-- Generic Methods
-- Multiple Type Parameters
-- Bounded Generics
-- Wildcards
-- PECS (Producer Extends Consumer Super)
-- Generic Interfaces
+## 📚 Files
+- PrimitiveVsReference.java
+- WrapperClasses.java
+- GenericTypeVsRawType.java
+- CompilerVsJVM.java
+- TypeErasure.java
+- ObjectVsGenerics.java
