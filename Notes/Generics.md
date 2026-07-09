@@ -6,6 +6,7 @@
 
 # Overview
 Generics allow classes, interfaces, and methods to work with different data types while providing compile time type safety.
+
 Introduced in: Java 5
 
 ---
@@ -21,9 +22,7 @@ Introduced in: Java 5
 ---
 
 # Topics Covered
-
 ## ✅ Primitive vs Reference Types
-
 ### Primitive Types
 - byte
 - short
