@@ -1,27 +1,43 @@
-# 📚 Java Collections Framework
+# ☕ Java Collections Framework
 
-## 🎯 Definition
-
-The Java Collections Framework (JCF) is a set of classes and interfaces used to store, manage, and manipulate groups of objects efficiently.
+> Quick revision notes covering the Java Collections Framework for interviews and backend development.
 
 ---
 
-## ⭐ Why Collections?
+# What is the Collection Framework?
 
-- Dynamic Size
-- Built-in Data Structures
-- Better Performance
-- Reusable Code
-- Rich API
+The Java Collections Framework (JCF) is a set of interfaces and classes used to store, manipulate, and process groups of objects efficiently.
+
+It provides reusable data structures and algorithms.
 
 ---
 
-## 📌 Collection Hierarchy
+# Why Collection Framework?
+
+Without Collections
+
+- Fixed-size arrays
+- Manual resizing
+- Difficult searching and sorting
+- More boilerplate code
+
+With Collections
+
+- Dynamic size
+- Efficient searching
+- Built-in sorting
+- Better performance
+- Rich utility methods
+
+---
+
+# Collection Hierarchy
 
 ```text
 Iterable
     │
 Collection
+│
 ├── List
 │   ├── ArrayList
 │   ├── LinkedList
@@ -34,220 +50,508 @@ Collection
 │
 └── Queue
     ├── PriorityQueue
-    └── ArrayDeque
+    ├── ArrayDeque
+    └── LinkedList
 
 Map
+│
 ├── HashMap
 ├── LinkedHashMap
 ├── TreeMap
-└── Hashtable
+├── Hashtable
+└── ConcurrentHashMap
 ```
 
 ---
 
-## 📌 ArrayList
+# Core Interfaces
 
-### Features
+## List
+
+- Ordered
+- Allows duplicates
+- Index based
+
+Examples
+
+- ArrayList
+- LinkedList
+- Vector
+
+---
+
+## Set
+
+- Unique elements
+- No duplicates
+
+Examples
+
+- HashSet
+- LinkedHashSet
+- TreeSet
+
+---
+
+## Queue
+
+- FIFO (First In First Out)
+
+Examples
+
+- LinkedList
+- PriorityQueue
+- ArrayDeque
+
+---
+
+## Map
+
+- Stores Key-Value pairs
+- Keys are unique
+- Values can be duplicated
+
+Examples
+
+- HashMap
+- LinkedHashMap
+- TreeMap
+
+---
+
+# ArrayList
+
+Underlying Data Structure
 
 - Dynamic Array
-- Ordered
-- Allows Duplicates
-- Allows Multiple Null Values
-- Fast Random Access
-
-### Time Complexity
-
-| Operation | Complexity |
-|-----------|------------|
-| Add (End) | O(1)* |
-| Get | O(1) |
-| Search | O(n) |
-| Insert Middle | O(n) |
-| Delete Middle | O(n) |
-
-💡 *Amortized O(1)
-
----
-
-## 📌 LinkedList
-
-### Features
-
-- Doubly Linked List
-- Ordered
-- Allows Duplicates
-- Efficient Insert/Delete
-- Sequential Access
-
-### Time Complexity
-
-| Operation | Complexity |
-|-----------|------------|
-| Add First | O(1) |
-| Add Last | O(1) |
-| Get | O(n) |
-| Search | O(n) |
-| Insert | O(1)* |
-| Delete | O(1)* |
-
-💡 *After reaching the required node.
-
----
-
-## 📌 ArrayList vs LinkedList
-
-| ArrayList | LinkedList |
-|------------|------------|
-| Dynamic Array | Doubly Linked List |
-| Fast Random Access | Slow Random Access |
-| Slow Insert/Delete | Fast Insert/Delete |
-| Less Memory | More Memory |
-
----
-
-## 📌 HashMap
-
-### Features
-
-- Stores Key Value Pairs
-- Unique Keys
-- Duplicate Values Allowed
-- Allows One Null Key
-- Unordered
-
----
-
-## 📌 hashCode()
-
-- Generates hash value
-- Determines bucket location
-- Same object should always return same hashCode()
-
----
-
-## 📌 equals()
-
-- Compares actual object equality
-- Used after hashCode() to find correct key inside a bucket
-
----
-
-## 📌 Collision
-
-Occurs when two keys produce the same hash value.
-
-Example
-
-```text
-Key A → Bucket 5
-Key B → Bucket 5
-```
-
-HashMap stores both keys inside the same bucket.
-
----
-
-## 📌 Load Factor
-
-### Default Value
-
-```java
-0.75
-```
-
-### Purpose
-
-Balances
-
-- Performance
-- Memory Usage
-
-When threshold exceeds
-
-```text
-Capacity × Load Factor
-```
-
-HashMap resizes itself.
-
----
-
-## 📌 Rehashing
-
-Occurs when the threshold is exceeded.
-
-Steps
-
-1. Create Bigger Array
-2. Recalculate Bucket Index
-3. Move Existing Entries
-
----
-
-## 📌 Why Capacity is Power of 2?
-
-Bucket Index
-
-```java
-(capacity - 1) & hash
-```
 
 Advantages
 
-- Faster than Modulo (%)
-- Better Distribution
-- Efficient Bitwise Calculation
+- Fast random access O(1)
+- Fast iteration
+- Memory efficient
+
+Disadvantages
+
+- Middle insertion O(n)
+- Middle deletion O(n)
+
+Best Use Case
+
+- Frequent reading
+- Rare insertions/deletions
 
 ---
 
-## 📌 Amortized Analysis
+# LinkedList
 
-ArrayList resizing is expensive.
+Underlying Data Structure
 
-Most insertions
+- Doubly Linked List
 
-```text
-O(1)
-```
+Advantages
 
-Occasional resizing
+- Fast insertion
+- Fast deletion
 
-```text
-O(n)
-```
+Disadvantages
 
-Average
+- Slow random access O(n)
+- Higher memory usage
 
-```text
-Amortized O(1)
+Best Use Case
+
+- Frequent insertions/deletions
+
+---
+
+# Vector
+
+- Synchronized
+- Thread Safe
+- Slower than ArrayList
+
+---
+
+# Stack
+
+- LIFO
+
+Methods
+
+```java
+push()
+
+pop()
+
+peek()
 ```
 
 ---
 
-## 🎤 Interview Questions
+# HashSet
 
-- What is Java Collections Framework?
+Underlying Structure
+
+- HashMap
+
+Properties
+
+- No duplicates
+- Unordered
+- One null value allowed
+
+Time Complexity
+
+- Add → O(1)
+- Remove → O(1)
+- Search → O(1)
+
+---
+
+# LinkedHashSet
+
+- Maintains insertion order
+- Slightly slower than HashSet
+
+---
+
+# TreeSet
+
+Underlying Structure
+
+- Red Black Tree
+
+Properties
+
+- Sorted
+- No duplicates
+
+Complexity
+
+- O(log n)
+
+---
+
+# PriorityQueue
+
+Stores elements according to priority.
+
+Default
+
+- Min Heap
+
+Complexity
+
+- Insert → O(log n)
+- Delete → O(log n)
+- Peek → O(1)
+
+---
+
+# HashMap
+
+Underlying Structure
+
+- Array + Hashing
+- Buckets
+- Linked List / Red Black Tree (after threshold)
+
+Properties
+
+- Key Value Pair
+- Unique Keys
+- One null key
+- Multiple null values
+
+Complexity
+
+| Operation | Average |
+|-----------|----------|
+| Put | O(1) |
+| Get | O(1) |
+| Remove | O(1) |
+
+---
+
+# HashMap Internal Working
+
+1. Calculate hashCode()
+2. Apply hash function
+3. Find bucket index
+4. Compare using equals()
+5. Store or update value
+6. Handle collision using Linked List / Tree
+
+---
+
+# Load Factor
+
+Default
+
+```text
+0.75
+```
+
+Meaning
+
+Resize occurs when
+
+```
+Size > Capacity × Load Factor
+```
+
+---
+
+# Rehashing
+
+When threshold exceeds,
+
+- New array created
+- Capacity doubled
+- All entries reinserted
+
+---
+
+# LinkedHashMap
+
+- Maintains insertion order
+- Uses doubly linked list internally
+
+---
+
+# TreeMap
+
+Underlying Structure
+
+- Red Black Tree
+
+Properties
+
+- Sorted Keys
+- No null keys
+
+Complexity
+
+- O(log n)
+
+---
+
+# Hashtable
+
+- Thread Safe
+- Synchronized
+- No null key
+- No null value
+
+Mostly replaced by ConcurrentHashMap.
+
+---
+
+# ConcurrentHashMap
+
+Designed for multithreading.
+
+Advantages
+
+- Better concurrency
+- Higher performance
+- Thread Safe
+
+---
+
+# Comparable
+
+Used for natural sorting.
+
+```java
+class Student implements Comparable<Student>
+```
+
+Method
+
+```java
+compareTo()
+```
+
+---
+
+# Comparator
+
+Used for custom sorting.
+
+```java
+Comparator<Student>
+```
+
+Method
+
+```java
+compare()
+```
+
+---
+
+# Comparable vs Comparator
+
+| Comparable | Comparator |
+|------------|------------|
+| Natural Sorting | Custom Sorting |
+| compareTo() | compare() |
+| Inside Class | Outside Class |
+
+---
+
+# Collections Utility Class
+
+Useful Methods
+
+```java
+sort()
+
+reverse()
+
+shuffle()
+
+binarySearch()
+
+max()
+
+min()
+
+frequency()
+```
+
+---
+
+# Iterator
+
+Used to traverse collections.
+
+Methods
+
+```java
+hasNext()
+
+next()
+
+remove()
+```
+
+---
+
+# ListIterator
+
+Supports
+
+- Forward traversal
+- Backward traversal
+- Modification while iterating
+
+---
+
+# Time Complexity
+
+| Collection | Access | Search | Insert | Delete |
+|------------|-------:|-------:|-------:|-------:|
+| ArrayList | O(1) | O(n) | O(n) | O(n) |
+| LinkedList | O(n) | O(n) | O(1)* | O(1)* |
+| HashSet | - | O(1) | O(1) | O(1) |
+| TreeSet | - | O(log n) | O(log n) | O(log n) |
+| HashMap | - | O(1) | O(1) | O(1) |
+| TreeMap | - | O(log n) | O(log n) | O(log n) |
+
+*At a known node.
+
+---
+
+# Common Interview Questions
+
+- Why Collection Framework?
+- Collection vs Collections?
+- List vs Set?
 - ArrayList vs LinkedList?
-- Why is ArrayList Add O(1)?
-- What is Amortized Analysis?
-- How does HashMap work?
-- hashCode() vs equals()?
-- What is Collision?
+- HashMap vs Hashtable?
+- HashMap vs TreeMap?
+- HashSet vs TreeSet?
+- How does HashMap work internally?
+- What is hashCode()?
+- Why equals() with hashCode()?
 - What is Load Factor?
-- Why 0.75?
-- Why is HashMap capacity a power of 2?
 - What is Rehashing?
+- Comparable vs Comparator?
+- Why is ArrayList insertion O(n)?
+- Why is LinkedList searching O(n)?
+- Why is TreeMap sorted?
+- Why is HashSet unique?
 
 ---
 
-## 🚀 Best Practices
+# Common Mistakes
 
-✅ Override both `hashCode()` and `equals()` together.
+- Forgetting to override both `equals()` and `hashCode()`
+- Using `==` instead of `equals()`
+- Choosing LinkedList when ArrayList is better
+- Using HashMap when sorted data is required
+- Ignoring load factor
+- Modifying collections during iteration without an Iterator
 
-✅ Use ArrayList for frequent reads.
+---
 
-✅ Use LinkedList for frequent insertions/deletions.
+# Best Practices
 
-✅ Choose the right collection for the problem.
+- Use interfaces (`List`, `Set`, `Map`) instead of implementation classes.
+- Prefer ArrayList unless frequent insertions/deletions are required.
+- Use HashMap for fast lookups.
+- Use TreeMap only when sorted keys are needed.
+- Override `equals()` and `hashCode()` together.
+- Choose the collection based on access patterns, not familiarity.
 
-✅ Avoid unnecessary resizing of collections.
+---
+
+# Real World Use Cases
+
+- User Session Management
+- Product Catalogs
+- Caching
+- Order Processing
+- Leaderboards
+- Search Systems
+- Banking Applications
+- Spring Boot Services
+
+---
+
+# Revision Checklist
+
+- Collection Hierarchy
+- List
+- Set
+- Queue
+- Map
+- ArrayList
+- LinkedList
+- Vector
+- Stack
+- HashSet
+- LinkedHashSet
+- TreeSet
+- PriorityQueue
+- HashMap
+- LinkedHashMap
+- TreeMap
+- Hashtable
+- ConcurrentHashMap
+- Comparable
+- Comparator
+- Collections Class
+- Iterator
+- Load Factor
+- Rehashing
+- Time Complexities
+
+---
+
+# Summary
+
+The Java Collections Framework provides efficient data structures for storing and manipulating data. Choosing the right collection based on access patterns, ordering, uniqueness, thread safety, and performance is a key skill for Java backend developers. Collections are heavily used in Spring Boot, Hibernate, caching, APIs, and enterprise applications.

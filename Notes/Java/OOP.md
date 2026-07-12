@@ -1,239 +1,462 @@
-# 🏛️ Object Oriented Programming (OOP)
+# ☕ Object Oriented Programming (OOP)
 
-## 🎯 Definition
-
-Object Oriented Programming (OOP) is a programming paradigm that organizes software around objects rather than functions. It improves code reusability, scalability, and maintainability.
+> Quick revision notes covering Object Oriented Programming concepts in Java for interviews and backend development.
 
 ---
 
-## ⭐ Four Pillars of OOP
+# What is OOP?
 
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Abstraction
+Object Oriented Programming (OOP) is a programming paradigm that organizes software using **objects**, which combine **data (fields)** and **behavior (methods)**.
+
+The main goal of OOP is to make software more modular, reusable, maintainable, and scalable.
 
 ---
 
-## 📌 Class
+# Why OOP?
 
-- Blueprint of an object
-- Defines properties and behaviors
-- Does not occupy memory until an object is created
+Without OOP
+
+- Code duplication
+- Difficult maintenance
+- Poor scalability
+- Low reusability
+
+With OOP
+
+- Code Reusability
+- Better Maintainability
+- High Scalability
+- Easy Testing
+- Real World Modeling
+
+---
+
+# Class
+
+A class is a blueprint for creating objects.
 
 ```java
-class Student {
-    int id;
+class Student{
+
     String name;
+    int age;
+
 }
 ```
 
 ---
 
-## 📌 Object
+# Object
 
-- Instance of a class
-- Occupies memory
-- Can access class members
+An object is an instance of a class.
 
 ```java
-Student s = new Student();
+Student s1 = new Student();
 ```
 
+Each object has:
+
+- State (Fields)
+- Behavior (Methods)
+
 ---
 
-## 📌 Constructor
+# Constructor
 
-- Special method
+A constructor initializes an object.
+
+### Default Constructor
+
+```java
+Student(){
+
+}
+```
+
+### Parameterized Constructor
+
+```java
+Student(String name,int age){
+
+    this.name = name;
+    this.age = age;
+
+}
+```
+
+Properties
+
 - Same name as class
 - No return type
-- Invoked automatically during object creation
-
-### Types
-
-- Default Constructor
-- Parameterized Constructor
+- Called automatically during object creation
 
 ---
 
-## 📌 this Keyword
+# this Keyword
 
-Used to refer to the current object.
+Refers to the current object.
+
+```java
+this.name = name;
+```
 
 Uses
 
-- Access instance variables
-- Invoke current constructor
+- Access current object's variables
+- Call another constructor
 - Pass current object
 
 ---
 
-## 📌 Encapsulation
+# super Keyword
 
-### Definition
+Refers to the parent class.
 
-Binding data and methods into a single unit while restricting direct access using access modifiers.
+```java
+super();
+```
 
-### Advantages
+Uses
 
-- Data Hiding
-- Better Security
-- Easy Maintenance
+- Access parent constructor
+- Access parent methods
+- Access parent variables
 
 ---
 
-## 📌 Inheritance
+# Pillars of OOP
 
-### Definition
+## 1. Encapsulation
 
-Acquiring properties and behaviors from another class.
+Wrapping data and methods together while restricting direct access.
+
+Example
 
 ```java
-class Child extends Parent
+private String name;
+
+public String getName(){
+
+    return name;
+
+}
 ```
 
-### Types
+Advantages
+
+- Data Hiding
+- Better Security
+- Better Maintainability
+
+---
+
+## 2. Inheritance
+
+Allows one class to acquire properties of another class.
+
+```java
+class Animal{
+
+}
+
+class Dog extends Animal{
+
+}
+```
+
+Advantages
+
+- Code Reusability
+- Extensibility
+
+Types
 
 - Single
 - Multilevel
 - Hierarchical
 
+(Java does not support Multiple Inheritance through classes.)
+
 ---
 
-## 📌 Polymorphism
-
-### Definition
+## 3. Polymorphism
 
 One interface, multiple implementations.
 
-### Types
+### Compile Time
 
-#### Compile Time
+Method Overloading
 
-- Method Overloading
+```java
+add(int a,int b)
 
-#### Runtime
-
-- Method Overriding
-
----
-
-## 📌 Method Overloading
-
-- Same Method Name
-- Different Parameters
-- Compile Time Polymorphism
+add(double a,double b)
+```
 
 ---
 
-## 📌 Method Overriding
+### Runtime
 
-- Same Method Signature
-- Different Implementation
-- Runtime Polymorphism
+Method Overriding
 
----
+```java
+class Animal{
 
-## 📌 Abstraction
+    void sound(){}
 
-### Definition
+}
 
-Hiding implementation details while exposing only essential functionality.
+class Dog extends Animal{
 
-Achieved Using
+    @Override
+    void sound(){
 
-- Abstract Class
-- Interface
+    }
 
----
+}
+```
 
-## 📌 Abstract Class
+Advantages
 
-- Declared using `abstract`
-- Can have abstract and concrete methods
-- Cannot be instantiated
-
----
-
-## 📌 Interface
-
-- Blueprint for behavior
-- Supports multiple inheritance
-- Variables are `public static final`
-- Methods are `public abstract` (before Java 8)
+- Flexibility
+- Dynamic Method Dispatch
 
 ---
 
-## 📌 Access Modifiers
+## 4. Abstraction
 
-| Modifier | Same Class | Package | Subclass | Outside Package |
-|-----------|:----------:|:-------:|:--------:|:---------------:|
-| private | ✅ | ❌ | ❌ | ❌ |
-| default | ✅ | ✅ | ❌ | ❌ |
-| protected | ✅ | ✅ | ✅ | ❌* |
-| public | ✅ | ✅ | ✅ | ✅ |
+Hides implementation details and exposes only essential functionality.
 
----
+### Abstract Class
 
-## 📌 Association
+```java
+abstract class Vehicle{
 
-Relationship between two independent classes.
+    abstract void start();
 
-### Types
-
-- Aggregation
-- Composition
+}
+```
 
 ---
 
-## 📌 Aggregation
+### Interface
 
-- Weak "Has-A" relationship
-- Objects can exist independently
+```java
+interface Payment{
+
+    void pay();
+
+}
+```
+
+Advantages
+
+- Loose Coupling
+- Better Design
+- Easy Extension
+
+---
+
+# Interface vs Abstract Class
+
+| Feature | Interface | Abstract Class |
+|----------|-----------|----------------|
+| Constructor | ❌ | ✅ |
+| Instance Variables | ❌ | ✅ |
+| Multiple Inheritance | ✅ | ❌ |
+| Methods | Abstract, Default, Static | Abstract + Concrete |
+| Keyword | implements | extends |
+
+---
+
+# Association
+
+Relationship between two independent objects.
 
 Example
 
-```
-Department → Teacher
-```
+Student → Teacher
 
 ---
 
-## 📌 Composition
+# Aggregation
 
-- Strong "Has-A" relationship
-- Child cannot exist without Parent
+"Weak Has-A" relationship.
+
+Child object can exist independently.
 
 Example
 
-```
+Department → Professor
+
+---
+
+# Composition
+
+"Strong Has-A" relationship.
+
+Child object cannot exist without parent.
+
+Example
+
 House → Room
+
+---
+
+# Object Class
+
+Every Java class inherits from `Object`.
+
+Common Methods
+
+```java
+toString()
+
+equals()
+
+hashCode()
+
+clone()
+
+getClass()
+
+wait()
+
+notify()
+
+notifyAll()
 ```
 
 ---
 
-## 🎤 Interview Questions
+# instanceof
+
+Checks whether an object belongs to a class.
+
+```java
+obj instanceof Student
+```
+
+Returns
+
+```java
+true
+
+false
+```
+
+---
+
+# Dynamic Method Dispatch
+
+Java decides which overridden method to execute at **runtime**.
+
+```java
+Animal a = new Dog();
+
+a.sound();
+```
+
+Dog's implementation executes.
+
+---
+
+# Access Modifiers
+
+| Modifier | Same Class | Package | Subclass | Outside |
+|-----------|------------|----------|-----------|----------|
+| public | ✅ | ✅ | ✅ | ✅ |
+| protected | ✅ | ✅ | ✅ | ❌ |
+| default | ✅ | ✅ | ❌ | ❌ |
+| private | ✅ | ❌ | ❌ | ❌ |
+
+---
+
+# SOLID Principles
+
+- S → Single Responsibility Principle
+- O → Open Closed Principle
+- L → Liskov Substitution Principle
+- I → Interface Segregation Principle
+- D → Dependency Inversion Principle
+
+These principles help build scalable and maintainable applications.
+
+---
+
+# Common Interview Questions
 
 - What is OOP?
+- What are the four pillars of OOP?
 - Class vs Object?
 - Constructor vs Method?
 - this vs super?
-- Overloading vs Overriding?
-- Abstract Class vs Interface?
-- Encapsulation vs Abstraction?
+- Method Overloading vs Overriding?
+- Abstraction vs Encapsulation?
+- Interface vs Abstract Class?
 - Aggregation vs Composition?
-- Why is Java called an Object Oriented Language?
+- Why doesn't Java support multiple inheritance with classes?
+- What is Dynamic Method Dispatch?
+- Why is OOP important in Spring Boot?
 
 ---
 
-## 🚀 Best Practices
+# Common Mistakes
 
-✅ Follow SOLID Principles
+- Using inheritance where composition is better
+- Exposing fields instead of using encapsulation
+- Confusing overloading with overriding
+- Forgetting `@Override`
+- Using interfaces without understanding abstraction
+- Tight coupling between classes
 
-✅ Prefer Composition over Inheritance
+---
 
-✅ Keep classes focused on one responsibility
+# Best Practices
 
-✅ Use meaningful class names
+- Favor Composition over Inheritance.
+- Keep classes focused on a single responsibility.
+- Program to interfaces, not implementations.
+- Follow SOLID principles.
+- Encapsulate data using private fields.
+- Avoid unnecessary inheritance hierarchies.
 
-✅ Encapsulate data using private fields
+---
+
+# Real World Use Cases
+
+- Banking Systems
+- E Commerce Applications
+- Hospital Management Systems
+- Spring Boot Applications
+- Android Development
+- Enterprise Software
+
+---
+
+# Revision Checklist
+
+- Class
+- Object
+- Constructor
+- this
+- super
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+- Interface
+- Abstract Class
+- Association
+- Aggregation
+- Composition
+- Object Class
+- instanceof
+- Dynamic Method Dispatch
+- SOLID Principles
+
+---
+
+# Summary
+
+Object Oriented Programming is the foundation of Java and modern backend development. Mastering OOP enables developers to build modular, reusable, secure, and scalable applications. Frameworks like Spring Boot heavily rely on OOP concepts such as abstraction, dependency injection, interfaces, and polymorphism.
