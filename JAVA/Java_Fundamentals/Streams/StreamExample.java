@@ -1,14 +1,18 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class StreamExample {
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(2,3,4,5,6,7,8);
+        List<String> names = Arrays.asList(
+                "Alice",
+                "Bob",
+                "Charlie",
+                "David"
+        );
 
-        numbers.stream()
-                .filter(n -> n % 2 == 0)
-                .map(n -> n * n)
-                .sorted((a,b) -> b - a)
-                .forEach(System.out::println);
+        names.stream()
+             .filter(name -> name.length() > 3)
+             .forEach(System.out::println);
     }
 }
